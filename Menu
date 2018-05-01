@@ -1,0 +1,114 @@
+/*CODE*/
+int main()
+{
+    menu();
+    return 0;
+}
+
+void menu()
+{
+    Lcartao lista_de_cartoes=NULL,novo_cartao;
+    Lfase todo=NULL,doing=NULL,done=NULL;
+    char c='a',check;
+    while(c!='0')
+    {
+        printf("\t\t(@)\n\t\t|-|______________________(@)\n\t\t| |                      |-|\n\t\t|-| WELCOME TO THE MENU! | |\n\t\t|_|______________________|-|\n\t\t(@)                      |_|\n\t\t                         (@)\n\n");
+        /*Pessoas*/
+        printf("\tListar Pessoas ---------------------------------> a\n\tDefinir o numero maximo de tarefas por pessoa --> b\n");
+        /*Fases*/
+        printf("\tInserir nova tarefa em To Do  ------------------> c\n\tPassar tarefa para DOING -----------------------> d\n\tAlterar pessoa responsavel por tafera em DOING -> e\n\tFechar cartao (Passar para DONE) ---------------> f\n\tReabrir cartao(Passar de Done para DOING) ------> g\n");
+        /*Visualizar*/
+        printf("\tVizualizar quadro ------------------------------> h\n\tVizualizar tarefas em TODO ---------------------> i\n\tVizualizar tarefas em DOING --------------------> j\n\tVizualizar tarefas em DONE ---------------------> k\n\tVizualizar tarefas de certa pessoa -------------> m\n\tVizualizar todas as tarefas --------------------> n\n");
+        printf("\nSair -> 0\n");
+        do{
+
+        printf(">>>");
+            fflush(stdin);
+            scanf("%c%c",&c,&check);
+        }while((c<'a' || c>'n') || (check!='\n'));
+
+        if(c=='a')
+        {
+        }
+        if(c=='b')
+
+        {
+
+
+        }
+        if(c=='c')
+        {
+            system("@cls||clear");
+            novo_cartao = cria_Lcartaoa(lista_de_cartoes);
+            lista_de_cartoes = insere_Lcartaoa(lista_de_cartoes,novo_cartao);
+            printf("\n\t\t\tTarefa inserida com sucesso!\n");
+
+        }
+
+        if(c=='d')
+        {
+            system("@cls||clear");
+            done=passar_para_doing(lista_de_cartoes,todo,doing,done);
+            system("@cls||clear");
+            printf("\n\t\t\tTarefa inserida em DOING com sucesso!\n");
+
+
+        }
+        if(c=='e')
+        {
+            system("@cls||clear");
+            visualiza_fase(todo);
+
+        }
+        if(c=='f')
+        {
+            system("@cls||clear");
+            done=passar_para_done(lista_de_cartoes,todo,doing,done);
+            system("@cls||clear");
+            printf("\n\t\t\tTarefa inserida em DONE com sucesso!\n");
+        }
+        if(c=='g')
+        {
+            system("@cls||clear");
+            done=passar_para_doing(lista_de_cartoes,todo,doing,done);
+            system("@cls||clear");
+            printf("\n\t\t\tTarefa inserida em DOING com sucesso!\n");
+        }
+
+        if(c=='h')
+        {
+
+            system("@cls||clear");
+
+
+        }
+        if(c=='i')
+        {
+            system("@cls||clear");
+            visualiza_fase(todo);
+
+        }
+        if(c=='j')
+        {
+            system("@cls||clear");
+            visualiza_fase(doing);
+        }
+        if(c=='k')
+        {
+            system("@cls||clear");
+            visualiza_fase(done);
+        }
+        if(c=='m')
+        {
+
+        }
+        if(c=='n')
+        {
+            system("@cls||clear");
+            vizualiza_todas_tarefas(lista_de_cartoes);
+        }
+
+    }
+}
+
+
